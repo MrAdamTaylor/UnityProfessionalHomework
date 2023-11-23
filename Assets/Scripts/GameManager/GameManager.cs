@@ -11,10 +11,10 @@ namespace DefaultNamespace
 
         [SerializeField] private GameObject _character;
         [SerializeField] private BulletSystem _bulletSystem;
-        [SerializeField] private PlayerController _characterController;
         [SerializeField] private GameFinisher _gameFinisher;
         [SerializeField] private BulletConfig _bulletConfig;
         
+        //Тут тоже посредник должен действовать
         private void OnEnable()
         {
             this._character.GetComponent<HitPointsComponent>().hpEmpty += this.OnCharacterDeath;
@@ -31,7 +31,7 @@ namespace DefaultNamespace
 
         //private void OnCharactersDeath(GameObject _) => _gameFinisher.FinishGame();
 
-        //TODO - дважды написанный код. Двойник в EnemyAttackAgent
+        //TODO - дважды написанный код. Двойник в EnemyAttackAgent 
         public void OnFlyBullet()
         {
             var weapon = this._character.GetComponent<WeaponComponent>();

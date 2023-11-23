@@ -64,6 +64,18 @@
      <Compile Include="Assets\Scripts\Input\IInputService.cs" />
      <Compile Include="Assets\Scripts\Input\InputManager.cs" />
      <Compile Include="Assets\Scripts\Input\InputManagerHorizontal.cs" />
+     <Compile Include="Assets\ManagerPlayerMediator.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\Bootstrap\GameBootstraper.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\StateMachine\GameLoopState.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\StateMachine\BootstrapState.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\Services\ServiceAllocator.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\Bootstrap\Game.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\StateMachine\GameStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\StateMachine\LoadDataState.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\Services\IService.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\StateMachine\IState.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\GameFactory.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\BulletFactory.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

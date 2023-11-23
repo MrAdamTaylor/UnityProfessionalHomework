@@ -11,6 +11,7 @@ namespace ShootEmUp
         public bool _fireRequired;
         
 
+        //Здесь нужен посредник
         private void FixedUpdate()
         {
             if (this._fireRequired)
