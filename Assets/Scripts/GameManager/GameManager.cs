@@ -1,13 +1,50 @@
+using ShootEmUp;
 using UnityEngine;
+using UnityEngine.Serialization;
+using CharacterController = UnityEngine.CharacterController;
 
-namespace ShootEmUp
+namespace DefaultNamespace
 {
-    public sealed class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
-        public void FinishGame()
+        [SerializeField] private InputManager _input;
+
+        [SerializeField] private GameObject _character;
+        [SerializeField] private BulletSystem _bulletSystem;
+        [SerializeField] private PlayerController _characterController;
+        [SerializeField] private GameFinisher _gameFinisher;
+        [SerializeField] private BulletConfig _bulletConfig;
+        
+        private void OnEnable()
         {
-            Debug.Log("Game over!");
-            Time.timeScale = 0;
+            this._character.GetComponent<HitPointsComponent>().hpEmpty += this.OnCharacterDeath;
         }
+
+        private void OnCharacterDeath(GameObject obj) => _gameFinisher.FinishGame();
+
+        private void OnDisable()
+        {
+            this._character.GetComponent<HitPointsComponent>().hpEmpty -= this.OnCharacterDeath;
+        }
+        
+        //private void OnCharacterDeath(GameObject _) => this.gameManager.FinishGame();
+
+        //private void OnCharactersDeath(GameObject _) => _gameFinisher.FinishGame();
+
+        //TODO - дважды написанный код. Двойник в EnemyAttackAgent
+        public void OnFlyBullet()
+        {
+            var weapon = this._character.GetComponent<WeaponComponent>();
+            _bulletSystem.FlyBulletByArgs(new BulletSystem.Args
+            {
+                isPlayer = true,
+                physicsLayer = (int) this._bulletConfig.physicsLayer,
+                color = this._bulletConfig.color,
+                damage = this._bulletConfig.damage,
+                position = weapon.Position,
+                velocity = weapon.Rotation * Vector3.up * this._bulletConfig.speed
+            });
+        }
+        
     }
 }

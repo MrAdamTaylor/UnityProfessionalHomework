@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{96d98a92-c789-3181-076e-a7ca71c437b8}</ProjectGuid>
+    <ProjectGuid>{c7a958e5-617c-2dac-532d-57d52720732c}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -48,19 +48,22 @@
      <Compile Include="Assets\Scripts\Bullets\Bullet.cs" />
      <Compile Include="Assets\Scripts\Enemy\Agents\EnemyMoveAgent.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyPositions.cs" />
+     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Components\HitPointsComponent.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyPool.cs" />
-     <Compile Include="Assets\Scripts\Input\InputManager.cs" />
+     <Compile Include="Assets\Scripts\Input\InputManagerHorizVert.cs" />
      <Compile Include="Assets\Scripts\Enemy\Agents\EnemyAttackAgent.cs" />
      <Compile Include="Assets\Scripts\Level\LevelBackground.cs" />
-     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Components\TeamComponent.cs" />
      <Compile Include="Assets\Scripts\Common\PhysicsLayer.cs" />
      <Compile Include="Assets\Scripts\Bullets\BulletConfig.cs" />
      <Compile Include="Assets\Scripts\Level\LevelBounds.cs" />
      <Compile Include="Assets\Scripts\Bullets\BulletUtils.cs" />
-     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameManager\GameFinisher.cs" />
+     <Compile Include="Assets\Scripts\Input\IInputService.cs" />
+     <Compile Include="Assets\Scripts\Input\InputManager.cs" />
+     <Compile Include="Assets\Scripts\Input\InputManagerHorizontal.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -306,16 +309,16 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Newtonsoft.Json">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Analytics.StandardEvents">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\PackageCache\com.unity.analytics@3.6.12\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\PackageCache\com.unity.analytics@3.6.12\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Analytics.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Analytics.Tracker">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -696,91 +699,91 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Purchasing.Common">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Purchasing.Common.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Purchasing.Common.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Tilemap.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Purchasing">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Analytics.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Services.Analytics.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Services.Analytics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Purchasing.SecurityStub">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Analytics">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Services.Analytics.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Services.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Advertisements">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Analytics">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Analytics.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Analytics.DataPrivacy">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Analytics">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Purchasing.SecurityCore">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Purchasing.Codeless">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Services.Core.Environments">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Purchasing.Stores">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Monetization">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Monetization.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Monetization.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.Purchasing">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.Advertisements.Editor">
-     <HintPath>C:\Users\Adam\Desktop\ShootEmUp (Dirty)\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
+     <HintPath>D:\repos\Homework\UnityProfessionalHomework\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
